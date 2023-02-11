@@ -9,3 +9,9 @@ Description:
 Release notes:
 Version 1.0: Init
 #> 
+
+if($true){
+    return 1
+}else{
+    return 0
+}
