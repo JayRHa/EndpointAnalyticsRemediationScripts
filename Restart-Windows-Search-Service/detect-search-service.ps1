@@ -4,7 +4,7 @@ Author:
 - Joey Verlinden (https://www.joeyverlinden.com/)
 - Andrew Taylor (https://andrewstaylor.com/)
 - Jannik Reinhard (jannikreinhard.com)
-Script: detect-service.ps1
+Script: detect-search-service.ps1
 Description: Detects if Windows Search service exists and is running
 Release notes:
 Version 1.0: Init

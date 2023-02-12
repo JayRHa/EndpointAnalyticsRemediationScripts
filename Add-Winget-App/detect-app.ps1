@@ -1,0 +1,30 @@
+<#
+Version: 1.0
+Author: 
+- Joey Verlinden (https://www.joeyverlinden.com/)
+- Andrew Taylor (https://andrewstaylor.com/)
+- Jannik Reinhard (jannikreinhard.com)
+Script: detect-app.ps1
+Description: Detects if app exists
+Release notes:
+Version 1.0: Init
+#> 
+
+$appnid = ""
+
+$ResolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe"
+if ($ResolveWingetPath){
+       $WingetPath = $ResolveWingetPath[-1].Path
+}
+start-sleep -seconds 10
+
+$Winget = $WingetPath + "\winget.exe"
+$wingettest = &$winget list --id $appid
+if ($wingettest -like "*$appid*"){
+Write-Host "Found it!"
+exit 0
+}
+else {
+write-host "Not Found"
+exit 1
+}
