@@ -1,8 +1,9 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
+- Joey Verlinden (www.joeyverlinden.com)
+- Andrew Taylor (andrewstaylor.com)
+- Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: Get-TemplateDetection
 Description:
