@@ -1,12 +1,13 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
+- Joey Verlinden (joeyverlinden.com)
+- Andrew Taylor (andrewstaylor.com)
+- Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: detect-old-profiles.ps1
 Description: Detects if there are profiles older than 30 days
-Release notes:
+Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
 #> 
 $days = 30

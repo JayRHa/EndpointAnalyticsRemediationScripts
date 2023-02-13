@@ -1,12 +1,13 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
+- Joey Verlinden (joeyverlinden.com)
+- Andrew Taylor (andrewstaylor.com)
+- Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: remediate-old-profiles.ps1
 Description: Removes old user profiles over 30 days old via DelProf1 or DelProf2
-Release notes:
+Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
 #> 
 $days = 30
