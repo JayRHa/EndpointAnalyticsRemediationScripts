@@ -9,6 +9,8 @@ Script: remediate-old-profiles.ps1
 Description: Removes old user profiles over 30 days old via DelProf1 or DelProf2
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 $days = 30
 $profiles = (get-CimInstance win32_userprofile | Where-Object {$_.LastUseTime -lt $(Get-Date).Date.AddDays(-$days)})

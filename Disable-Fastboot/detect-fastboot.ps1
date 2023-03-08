@@ -9,6 +9,8 @@ Script: detect-fastboot.ps1
 Description: Detects if Fastboot is enabled
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 
 $Path = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power"

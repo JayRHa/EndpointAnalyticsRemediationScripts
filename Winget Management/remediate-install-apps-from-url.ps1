@@ -9,41 +9,9 @@ Script: remediate-install-apps-from-url.ps1
 Description: Installs apps from a URL via winget
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
-
-
-Function Get-ScriptVersion(){
-    
-    <#
-    .SYNOPSIS
-    This function is used to check if the running script is the latest version
-    .DESCRIPTION
-    This function checks GitHub and compares the 'live' version with the one running
-    .EXAMPLE
-    Get-ScriptVersion
-    Returns a warning and URL if outdated
-    .NOTES
-    NAME: Get-ScriptVersion
-    #>
-    
-    [cmdletbinding()]
-    
-    param
-    (
-        $liveuri
-    )
-$contentheaderraw = (Invoke-WebRequest -Uri $liveuri -Method Get)
-$contentheader = $contentheaderraw.Content.Split([Environment]::NewLine)
-$liveversion = (($contentheader | Select-String 'Version:') -replace '[^0-9.]','') | Select-Object -First 1
-$currentversion = ((Get-Content -Path $PSCommandPath | Select-String -Pattern "Version: *") -replace '[^0-9.]','') | Select-Object -First 1
-if ($liveversion -ne $currentversion) {
-write-warning "Script has been updated, please download the latest version from $liveuri"
-}
-}
-Get-ScriptVersion -liveuri "https://raw.githubusercontent.com/andrew-s-taylor/public/main/Powershell%20Scripts/Winget/remediate-install-apps-from-url.ps1"
-
-
-
 #####################################################################################################################################
 #                            LIST URL                                                                                               #
 #                                                                                                                               #

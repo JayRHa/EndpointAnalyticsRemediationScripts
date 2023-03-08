@@ -9,6 +9,8 @@ Script: detect-wu-service.ps1
 Description: Detects if Windows Update exists and is running
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 
 $servicename = "wuauserv"

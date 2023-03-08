@@ -9,6 +9,8 @@ Script: detect-backup.ps1
 Description: Detects if backup has been run in the last hour
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 $todaysdate = Get-Date -Format "dd-MM-yyyy-HH"
 $dir = $env:APPDATA + "\backup-restore"

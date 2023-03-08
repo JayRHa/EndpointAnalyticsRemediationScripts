@@ -9,6 +9,8 @@ Script: detect-store.ps1
 Description: Detects if the store has been pinned to the taskbar
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 ##We're looping through the verbs so it's going to be easier to count

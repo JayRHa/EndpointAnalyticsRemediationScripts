@@ -9,6 +9,8 @@ Script: remediate-backup.ps1
 Description: Downloads custom backup script and deploys to backup user profile to OneDrive
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 $DirectoryToCreate = $env:APPDATA + "\backup-restore"
 if (-not (Test-Path -LiteralPath $DirectoryToCreate)) {

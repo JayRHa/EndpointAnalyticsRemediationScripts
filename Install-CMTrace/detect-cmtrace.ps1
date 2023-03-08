@@ -9,7 +9,10 @@ Script: detect-cmtrace.ps1
 Description: Detects if CMTrace is installed
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
-#> $Path = "c:\windows\system32\cmtrace.exe"
+Run as: System
+Context: 64 Bit
+#> 
+$Path = "c:\windows\system32\cmtrace.exe"
 
 Try {
     $check = Test-Path -Path $path -ErrorAction Stop

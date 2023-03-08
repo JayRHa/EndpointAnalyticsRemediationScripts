@@ -6,9 +6,11 @@ Author:
 - Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: detect-fastboot.ps1
-Description: Detects if Fastboot is enabled
+Description: Detects if machine has been on for more than 7 days
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 
 ##Check how long machine has been on for

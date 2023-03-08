@@ -9,5 +9,7 @@ Script: install-cmtrace-remediate.ps1
 Description: Installs CMTrace to c:\windows\system32
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 invoke-webrequest -uri "https://github.com/andrew-s-taylor/public/raw/main/Troubleshooting/CMTrace.exe" -outfile "C:\Windows\System32\cmtrace.exe"

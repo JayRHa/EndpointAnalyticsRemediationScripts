@@ -9,6 +9,8 @@ Script: remediate-store.ps1
 Description: Unpins the Windows Store from the taskbar
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 $apps = ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items())
 foreach ($app in $apps) {

@@ -9,6 +9,8 @@ Script: detect-old-profiles.ps1
 Description: Detects if there are profiles older than 30 days
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: System
+Context: 64 Bit
 #> 
 $days = 30
 $profiles = (get-CimInstance win32_userprofile | Where-Object {$_.LastUseTime -lt $(Get-Date).Date.AddDays(-$days)})
