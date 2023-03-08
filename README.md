@@ -18,7 +18,7 @@ This repository is a community project where we try to implement many ready to u
 If you have a idea for a script which is missing, contact us via our blog social media or open an issue on the repository with an description of your idea:
 ![issue](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/submitIdea.png)
 
-If you have an script which you want to upload to this repository use our template in the *0 - Teamplate* folder and create an pull request.
+If you have an script which you want to upload to this repository use our template in the *0 - Template* folder and create an pull request.
 
 ## How to add a remediation script
 - Open the [Intune Portal](https://endpoint.microsoft.com/)
