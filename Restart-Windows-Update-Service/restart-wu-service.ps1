@@ -1,12 +1,13 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
+- Joey Verlinden (joeyverlinden.com)
+- Andrew Taylor (andrewstaylor.com)
+- Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: restart-wu-service.ps1
 Description: Restarts Windows Update service
-Release notes:
+Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
 #> 
 

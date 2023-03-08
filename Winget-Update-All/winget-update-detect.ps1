@@ -1,12 +1,13 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
+- Joey Verlinden (joeyverlinden.com)
+- Andrew Taylor (andrewstaylor.com)
+- Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
 Script: winget-update-detect.ps1
 Description: Detects for any updates via Winget
-Release notes:
+Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
 #> 
 
