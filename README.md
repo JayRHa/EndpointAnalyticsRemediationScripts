@@ -1,6 +1,6 @@
 # Endpoint Analytics Remediation Scripts
 
-## Into
+## Intro
 This repository is a community project where we try to implement many ready to use endpoint analytics remediation scripts and provide this to the Intune community. If you have further ideas we would be happy if you send them to us, open an issue on this repository or create a pull request.
 
 ## Contribution
@@ -34,3 +34,6 @@ If you have an script which you want to upload to this repository use our templa
 - Create a **schedule**.
 - Click **Next** > **Create**
 ![2](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.webp)
+
+## Disclosure
+This is a community repository. There is no guarantee for this. Please check thoroughly before running the scripts.
