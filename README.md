@@ -1,6 +1,6 @@
 # Endpoint Analytics Remediation Scripts
 
-## Into
+## Intro
 This repository is a community project where we try to implement many ready to use endpoint analytics remediation scripts and provide this to the Intune community. If you have further ideas we would be happy if you send them to us, open an issue on this repository or create a pull request.
 
 ## Contribution
@@ -14,4 +14,26 @@ This repository is a community project where we try to implement many ready to u
   </tbody>
 </table>
 
+## How to contribute?
+If you have a idea for a script which is missing, contact us via our blog social media or open an issue on the repository with an description of your idea:
+![issue](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/submitIdea.png)
+
+If you have an script which you want to upload to this repository use our template in the *0 - Teamplate* folder and create an pull request.
+
 ## How to add a remediation script
+- Open the [Intune Portal](https://endpoint.microsoft.com/)
+- Navigate to **Reports** -> **Endpoint Analytics**
+- Click **+ Create script package**
+![1](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/1.webp)
+- Enter a **Name** and click **Next**
+![2](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/2.webp)
+- Upload the **Detection script**. 
+- Click **Next** > **Next**
+![2](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.webp)
+- Assign the script to a **group**
+- Create a **schedule**.
+- Click **Next** > **Create**
+![2](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.webp)
+
+## Disclosure
+This is a community repository. There is no guarantee for this. Please check thoroughly before running the scripts.
