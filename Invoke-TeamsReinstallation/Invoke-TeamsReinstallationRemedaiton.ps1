@@ -9,6 +9,8 @@ Script: Invoke-TeamsReinstallation
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: Admin
+Context: 64 Bit
 #> 
 
 $MachineWide = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "Teams Machine-Wide Installer"}

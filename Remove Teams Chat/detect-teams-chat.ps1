@@ -9,6 +9,8 @@ Script: detect-teams-chat.ps1
 Description: Detects if Teams Chat is installed
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 ##Detect Teams Chat
 

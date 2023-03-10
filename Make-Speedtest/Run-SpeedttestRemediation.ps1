@@ -9,6 +9,8 @@ Script: Make-Speedtest
 Description: https://jannikreinhard.com/2022/06/11/use-endpoint-analytics-to-find-slow-internet-breakouts/
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: Admin/USer
+Context: 64 Bit
 #> 
 
 ################################################################################################################

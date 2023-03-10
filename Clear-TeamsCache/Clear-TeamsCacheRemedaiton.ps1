@@ -9,6 +9,8 @@ Script: Clear-TeamsCache
 Description: Source https://www.solutions2share.com/clear-microsoft-teams-cache
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 Write-Host "Microsoft Teams will be quit now in order to clear the cache."

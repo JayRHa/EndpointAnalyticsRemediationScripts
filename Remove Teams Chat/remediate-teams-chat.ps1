@@ -9,6 +9,8 @@ Script: remediate-teams-chat.ps1
 Description: Removes Teams Chat (fully)
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 #Remove Teams Chat

@@ -9,6 +9,8 @@ Script: Clear-TeamsCache
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 if(Test-Path -Path $env:APPDATA\"Microsoft\teams"){

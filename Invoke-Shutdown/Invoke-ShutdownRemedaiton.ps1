@@ -9,6 +9,8 @@ Script: Invoke-Shutdown
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: Admin/User
+Context: 64 Bit
 #> 
 
 $timeout = 60

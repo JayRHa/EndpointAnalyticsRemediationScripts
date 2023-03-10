@@ -9,6 +9,8 @@ Script: detection_Activate-Numlock
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 if ("0" -eq (Get-ItemProperty -Path 'Registry::HKU\.DEFAULT\Control Panel\Keyboard' -Name "InitialKeyboardIndicators").InitialKeyboardIndicators) {
