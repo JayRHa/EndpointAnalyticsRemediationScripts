@@ -12,4 +12,8 @@ Version 1.0: Init
 Run as: System
 Context: 64 Bit
 #> 
-invoke-webrequest -uri "https://github.com/andrew-s-taylor/public/raw/main/Troubleshooting/CMTrace.exe" -outfile "C:\Windows\System32\cmtrace.exe"
+
+## Downlaod CMTracered from the following repository andd copy it in your own repo "https://github.com/andrew-s-taylor/public/raw/main/Troubleshooting/CMTrace.exe"
+$ownRepoUri = "https://github.com/......."
+
+invoke-webrequest -uri $ownRepoUri -outfile "C:\Windows\System32\cmtrace.exe"
