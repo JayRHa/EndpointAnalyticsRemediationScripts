@@ -17,7 +17,7 @@ Context: 64 Bit
 $MSTeams = "MicrosoftTeams"
 
 $WinPackage = Get-AppxPackage -allusers | Where-Object {$_.Name -eq $MSTeams}
-$ProvisionedPackage = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq $WinPackage }
+$ProvisionedPackage = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq $WinPackage.Name }
 If ($null -ne $WinPackage) 
 {
     Remove-AppxPackage  -Package $WinPackage.PackageFullName
