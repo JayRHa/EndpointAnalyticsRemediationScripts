@@ -9,6 +9,8 @@ Script: Remove-ProxySettings
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: Admin
+Context: 64 Bit
 #> 
 
 if(Get-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' | findstr ProxyServerv){

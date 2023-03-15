@@ -9,6 +9,8 @@ Script: Make-Speedtest
 Description: https://jannikreinhard.com/2022/06/11/use-endpoint-analytics-to-find-slow-internet-breakouts/
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: Admin/USer
+Context: 64 Bit
 #> 
 
 ################################################################################################################
@@ -16,7 +18,9 @@ Version 1.0: Init
 ################################################################################################################
 # Speedtest 
 $testCount = 3
-$testFile = 'https://github.com/JayRHa/Intune-Scripts/raw/main/Make-Speedtest/testfile.txt'
+# Upload a large file to your github repository or download the exaample file from my repo: 'https://github.com/JayRHa/Intune-Scripts/raw/main/Make-Speedtest/testfile.txt'
+#Uri from your repo or blob
+$testFile = "https://github.com/........"
 $fileSize = 5 #File size in Mbit
 
 # Log Analytics Workspcae

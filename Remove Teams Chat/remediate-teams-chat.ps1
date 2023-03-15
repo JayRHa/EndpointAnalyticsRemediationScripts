@@ -9,13 +9,15 @@ Script: remediate-teams-chat.ps1
 Description: Removes Teams Chat (fully)
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
+Run as: User
+Context: 64 Bit
 #> 
 
 #Remove Teams Chat
 $MSTeams = "MicrosoftTeams"
 
 $WinPackage = Get-AppxPackage -allusers | Where-Object {$_.Name -eq $MSTeams}
-$ProvisionedPackage = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq $WinPackage }
+$ProvisionedPackage = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq $WinPackage.Name }
 If ($null -ne $WinPackage) 
 {
     Remove-AppxPackage  -Package $WinPackage.PackageFullName

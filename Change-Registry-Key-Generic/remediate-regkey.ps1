@@ -8,6 +8,8 @@ Script: remediate-fastboot.ps1
 Description: Disables Fastboot via registry key
 Release notes:
 Version 1.0: Init
+Run as: Admin/User
+Context: 64 Bit
 #> 
 
 ##Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System

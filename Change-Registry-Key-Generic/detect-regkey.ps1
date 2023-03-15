@@ -8,7 +8,8 @@ Script: detect-fastboot.ps1
 Description: Detects if Fastboot is enabled
 Release notes:
 Version 1.0: Init
-
+Run as: Admin/User
+Context: 64 Bit
 #> 
 
 ##Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
