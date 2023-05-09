@@ -14,7 +14,7 @@ Context: 32 & 64 Bit
 #> 
 
 
-$Path = "HKLM:\SSYSTEM\CurrentControlSet\Control\TimeZoneInformation"
+$Path = "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation"
 $Name = "TimeZoneKeyName"
 $Type = "STRING"
 $Value = "W. Europe Standard Time"
