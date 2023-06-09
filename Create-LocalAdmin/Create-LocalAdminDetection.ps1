@@ -5,6 +5,7 @@ Author:
 - Andrew Taylor (andrewstaylor.com)
 - Florian Slazmann (scloud.work)
 - Jannik Reinhard (jannikreinhard.com)
+- Simon Skotheimsvik (skotheimsvik.no)
 Script: Create-LocalAdmin
 Description:
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
@@ -15,11 +16,10 @@ Context: 64 Bit
 
 $localAdminName = ""
 
-$la = 
 if(Get-LocalUser | where-Object Name -eq $localAdminName){
-    Write-Host "User does not exist"
-    return 1
-}else{
     Write-Host "User does already exist"
-    return 0
+    Exit 0
+}else{
+    Write-Host "User does not exist"
+    Exit 1
 }
