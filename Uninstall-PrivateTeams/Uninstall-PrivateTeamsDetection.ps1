@@ -13,7 +13,7 @@ Run as: Admin
 Context: 64 Bit
 #> 
 
-if ($null -eq (Get-AppxPackage -Name MicrosoftTeams)) {
+if ($null -eq (Get-AppxPackage -Name MicrosoftTeams -allusers)) {
 	Write-Host "Private MS Teams client is not installed"
 	exit 0
 } Else {
