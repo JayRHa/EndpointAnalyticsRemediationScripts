@@ -10,9 +10,9 @@ Run as: Admin
 Context: 64 Bit
 #> 
 
-$Path = 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManWorkstation\Parameters'
+$Path = 'HKLM\System\CurrentControlSet\Services\LanManWorkstation\Parameters'
 $Name = 'RequireSecuritySignature'
 $Type = "DWORD"
 $Value = 1
 
-Set-ItemProperty -Path $Path -Name $Name -Type $Type -Value $Value 
+New-ItemProperty -LiteralPath $Path -Name $Name -Value $Value -PropertyType $Type
