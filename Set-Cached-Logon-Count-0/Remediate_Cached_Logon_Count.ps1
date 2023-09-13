@@ -1,5 +1,5 @@
 <#
-Version: 1.0
+Version: 1.1
 Author: 
 Tom Coleman
 Script: Detect Cached Logon Count
@@ -13,5 +13,6 @@ Context: 64 Bit
 $Path = 'Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Nt\CurrentVersion\Winlogon'
 $Name = 'CachedLogonsCount'
 $Value = 0
+$Type = 'REG_SZ'
 
-Set-ItemProperty -Path $Path -Name $Name -Value $Value 
+New-ItemProperty -LiteralPath $Path -Name $Name -Value $Value -PropertyType $Type -Force -ea SilentlyContinue;
