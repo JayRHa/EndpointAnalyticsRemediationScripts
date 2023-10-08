@@ -11,6 +11,9 @@ This repository is a community project where we try to implement many ready to u
         <td align="center"><a href="https://github.com/FlorianSLZ"><img src="https://avatars.githubusercontent.com/u/38555854?v=4" width="100px;" alt="Florian Salzmann"/><br /><sub><b>Florian Salzmann</b></sub></a><br /><a href="https://twitter.com/FlorianSLZ/" title="Twitter">💬</a> <a href="https://www.linkedin.com/in/fsalzmann/" title="LinkedIn">💬</a></td>
         <td align="center"><a href="https://github.com/j0eyv"><img src="https://avatars.githubusercontent.com/u/41282854?v=4" width="100px;" alt="Joey Verlinden"/><br /><sub><b>Joey Verlinden</b></sub></a><br /><a href="https://twitter.com/jvldn1" title="Twitter">💬</a> <a href="https://www.linkedin.com/in/joeyverlinden/" title="LinkedIn">💬</a></td>
         <td align="center"><a href="https://github.com/JayRHa"><img src="https://avatars.githubusercontent.com/u/73911860?v=4" width="100px;" alt="Jannik Reinhard"/><br /><sub><b>Jannik Reinhard</b></sub></a><br /><a href="https://twitter.com/jannik_reinhard" title="Twitter">💬</a> <a href="https://www.linkedin.com/in/jannik-r/" title="LinkedIn">💬</a></td>
+      <td align="center"><a href="https://github.com/SimonSkotheimsvik"><img src="https://avatars.githubusercontent.com/u/57434443?v=4" width="100px;" alt="Simon Skotheimsvik"/><br /><sub><b>Simon Skotheimsvik</b></sub></a><br/></td>
+
+      
   </tbody>
 </table>
 
