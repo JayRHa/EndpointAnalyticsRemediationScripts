@@ -22,7 +22,7 @@ $Name3 = 'MonitorProcess'
 $Value1 = '00000512'
 $Value2 = '00000001'
 ##Ensure you change ****INSERTYOURUNIQUECANARYTOKENHERE**** to the token you generate at https://www.canarytokens.org
-$Value3 = 'cmd.exe /c start /min powershell.exe -windowstyle hidden -command "$($u=$(\"u$env:username\" -replace(''[^\x00-\x7f]|\s'', ''''))[0..63] -join '''';$c=$(\"c$env:computername\" -replace(''[^\x00-\x7f]|\s'', ''''));Resolve-DnsName -Name \"$c.UN.$u.CMD.l61rza000dneek4590rpuwncm.canarytokens.com\")"'
+$Value3 = 'cmd.exe /c start /min powershell.exe -windowstyle hidden -command "$($u=$(\"u$env:username\" -replace(''[^\x00-\x7f]|\s'', ''''))[0..63] -join '''';$c=$(\"c$env:computername\" -replace(''[^\x00-\x7f]|\s'', ''''));Resolve-DnsName -Name \"$c.UN.$u.CMD.****INSERTYOURUNIQUECANARYTOKENHERE****.canarytokens.com\")"'
 
 $type = 'DWORD'
 
