@@ -1,20 +1,24 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (joeyverlinden.com)
-- Andrew Taylor (andrewstaylor.com)
-- Florian Slazmann (scloud.work)
-- Jannik Reinhard (jannikreinhard.com)
-Script: Get-TemplateDetection
-Description:
+- Jeroen Burgerhout (burgerhout.org)
+Script: Detect-OutlookNew
+Description: Script detects the new Microsoft Outlook app on Windows 11 23H2.
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
-Run as: User/Admin
-Context: 32 & 64 Bit
+Run this script using the logged-on credentials: Yes
+Enforce script signature check: No
+Run script in 64-bit PowerShell: Yes
 #> 
 
-if($true){
-    return 1
-}else{
-    return 0
+if (Get-AppxPackage -Name *OutlookForWindows*) {
+write-host "Microsoft Outlook (New) found."
+
+exit 1
+}
+
+else {
+write-host "Microsoft Outlook (New) not found."
+
+exit 0
 }
