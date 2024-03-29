@@ -1,18 +1,13 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
-- Jannik Reinhard (jannikreinhard.com)
-Script: detect-fastboot.ps1
-Description: Detects if Fastboot is enabled
+- Adam Gell
+Script: detect-automatictimezone.ps1
+Description: Sets up Automatic Timezone and Time Sync
 Release notes:
 Version 1.0: Init
-Run as: Admin/User
+Run as: Admin
 Context: 64 Bit
-
-Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location -Name Value -Value "Allow"
-Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\tzautoupdate -Name start -Value "3"
 #> 
 
 ##Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System

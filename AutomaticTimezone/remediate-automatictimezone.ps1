@@ -1,14 +1,12 @@
 <#
 Version: 1.0
 Author: 
-- Joey Verlinden (https://www.joeyverlinden.com/)
-- Andrew Taylor (https://andrewstaylor.com/)
-- Jannik Reinhard (jannikreinhard.com)
-Script: remediate-fastboot.ps1
-Description: Disables Fastboot via registry key
+- Adam Gell
+Script: remediate-automatictimezone.ps1
+Description: Sets up Automatic Timezone and Time Sync
 Release notes:
 Version 1.0: Init
-Run as: Admin/User
+Run as: Admin
 Context: 64 Bit
 #> 
 
