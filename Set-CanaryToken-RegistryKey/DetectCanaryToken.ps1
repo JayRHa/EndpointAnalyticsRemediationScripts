@@ -11,7 +11,7 @@ Context: 64 Bit
 #> 
 
 ##Enter the path to the registry key for example HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-$regpath = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\whoami.exe"
+$regpath = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wmic.exe"
 
 ##Enter the name of the registry key for example EnableLUA
 $regname = "GlobalFlag"

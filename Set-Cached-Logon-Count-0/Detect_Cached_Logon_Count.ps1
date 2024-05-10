@@ -10,8 +10,8 @@ Run as: Admin
 Context: 64 Bit
 #> 
 
-$Path = 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Nt\CurrentVersion\Winlogon'
-$Name = 'CachedLogonsCount'
+$Path = "HKLM:\Software\Microsoft\Windows Nt\CurrentVersion\Winlogon"
+$Name = "CachedLogonsCount"
 $Value = 0
 
 Try {
