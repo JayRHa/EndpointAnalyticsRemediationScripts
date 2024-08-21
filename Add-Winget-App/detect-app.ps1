@@ -13,7 +13,7 @@ Run as: System
 Context: 64 Bit
 #> 
 
-$appnid = ""
+$appid = ""
 
 $ResolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe"
 if ($ResolveWingetPath){
