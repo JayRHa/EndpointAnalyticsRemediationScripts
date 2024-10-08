@@ -11,10 +11,16 @@ Hint: This is a community script. There is no guarantee for this. Please check t
 Version 1.0: Init
 Run as: User
 Context: 64 Bit
+
+Version: 2.0
+Author:
+-Michael Oliveri
+Add "-Confirm:$false" for Remove-Item
+Replace "Return" by "Exit"
 #> 
 
 if(Test-Path -Path $env:APPDATA\"Microsoft\teams"){
-    return 1
+    Exit 1
 }else{
-    return 0
+    Exit 0
 }
