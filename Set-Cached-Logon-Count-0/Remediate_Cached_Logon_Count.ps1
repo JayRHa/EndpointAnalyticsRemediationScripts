@@ -10,9 +10,9 @@ Run as: Admin
 Context: 64 Bit
 #> 
 
-$Path = 'Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Nt\CurrentVersion\Winlogon'
-$Name = 'CachedLogonsCount'
+$Path = "HKLM:\Software\Microsoft\Windows Nt\CurrentVersion\Winlogon"
+$Name = "CachedLogonsCount"
 $Value = 0
-$Type = 'REG_SZ'
+$Type = "REG_SZ"
 
-New-ItemProperty -LiteralPath $Path -Name $Name -Value $Value -PropertyType $Type -Force -ea SilentlyContinue;
+New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType $Type -Force -ea SilentlyContinue;
