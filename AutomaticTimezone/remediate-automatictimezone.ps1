@@ -21,7 +21,8 @@ $regvalue = "Allow"
 $regvalue2 = "3"
 
 ##Enter the type of the registry key for example DWord
-$regtype = "DWORD"
+$regtype = "STRING"
+$regtype2 = "DWORD"
 
 
 New-ItemProperty -LiteralPath $regpath -Name $regname -Value $regvalue -PropertyType $regtype -Force -ea SilentlyContinue;
