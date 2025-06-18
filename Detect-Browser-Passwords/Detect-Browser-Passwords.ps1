@@ -2,7 +2,7 @@
 
 Author       : Sven Wick
 Script       : Detect-Browser-Passwords.ps1
-Description  : Script detects if common Browsers have have passwords stored locally
+Description  : Script detects if common Browsers have passwords stored locally
 Requirements : sqlite3.exe installed
 
                You can use
