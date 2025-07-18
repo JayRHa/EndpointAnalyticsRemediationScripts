@@ -21,40 +21,73 @@ $sqlitePath = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\SQLite.SQLite_Microso
 $found_some_passwords = $false
 $found_sqlite_binary  = $false
 $message              = @()
+$profilePaths         = @()
+$filePaths            = @()
 
 # Check for sqlite3 binary
 if (Test-Path $sqlitePath) {
     $found_sqlite_binary = $true
 }
 
-# Define an array of file paths
-$filePaths = @(
-    "$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default\Login Data",
-    "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Login Data",
-    "$env:LOCALAPPDATA\BraveSoftware\Brave-Browser\User Data\Default\Login Data",
-    "$env:APPDATA\Opera Software\Opera Stable\Login Data"
+$chromeBasedAppDataPaths = @(
+    "$env:LOCALAPPDATA\Microsoft\Edge\User Data\",
+    "$env:LOCALAPPDATA\Google\Chrome\User Data\",
+    "$env:LOCALAPPDATA\BraveSoftware\Brave-Browser\User Data\",
+    "$env:APPDATA\Opera Software\Opera Stable\"
 )
 
-# Get the path to the Firefox profiles
-$firefoxProfilesPath = "$env:APPDATA\Mozilla\Firefox\Profiles"
+$firefoxBasedAppDataPaths = @(
+    "$env:APPDATA\Mozilla\Firefox\Profiles"
+)
 
-# Get all Firefox Profiles
+#
+# Find profile folders of chrome-based Browsers
+#
 
-if (Test-Path $firefoxProfilesPath) {
-  $firefoxProfiles = Get-ChildItem -Path $firefoxProfilesPath
+foreach ( $browserAppDataPath in $chromeBasedAppDataPaths ) {
 
-  # Define the postfix
-  $postfix = "\logins.json"
+    # Get all folders that match "Default" or "Profile *"
+    $profileFolders = Get-ChildItem -Path $browserAppDataPath -Directory | Where-Object { $_.Name -eq "Default" -or $_.Name -like "Profile *" }
 
-  # Create a list of paths with the postfix added
-  $firefoxProfilesPaths = $firefoxProfiles | ForEach-Object { $_.FullName + $postfix }
+    foreach ($folder in $profileFolders) {
+        $profilePaths = $profilePaths + $($folder.FullName)
 
-  # Add the Firefox profile paths to the existing array
-  $filePaths += $firefoxProfilesPaths
+    }
+
 }
 
-# Iterate over each file path and check if the file exists
-# and count the number of passwords
+#
+# Find profile folder of firefox-based browsers
+#
+
+foreach ( $browserAppDataPath in $firefoxBasedAppDataPaths ) {
+
+    $profileFolders = Get-ChildItem -Path $browserAppDataPath
+
+    foreach ($folder in $profileFolders) {
+        $profilePaths = $profilePaths + $($folder.FullName)
+
+    }
+
+}
+
+#
+# Find all "logins.json" and "Login Data" files in all profile folders
+#
+
+foreach ( $profilePath in $profilePaths ) {
+
+    $loginFiles = Get-ChildItem -Path $profilePath -Recurse -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -in @("logins.json", "Login Data") }
+
+    foreach ($file in $loginFiles) {
+          $filePaths = $filePaths + $($file.FullName)
+    }
+
+}
+
+#
+# Iterate over each file path and check if the file exists and count the number of passwords
+#
 
 foreach ($filePath in $filePaths) {
 
@@ -63,7 +96,7 @@ foreach ($filePath in $filePaths) {
         $filename = (Get-Item -Path $filePath).Name
 
         #
-        # Firefox
+        # Firefox-based Browsers
         #
 
         if ($filename -eq "logins.json") {
@@ -79,64 +112,63 @@ foreach ($filePath in $filePaths) {
 
                 if ($countLogins -gt 0) {
                   $found_some_passwords = $true
-		  $message = $message + "${countLogins} password(s) detected : ${filePath}"
-		}
-
+                  $message = $message + "${countLogins} password(s) detected : ${filePath}"
+                }
             }
         }
 
         #
         # Chrome-based Browsers
-	#
+        #
 
         # Skip testing when no sqlite tools available
 
         if (-not ($found_sqlite_binary)) {
-	  continue
-	}
+            continue
+        }
 
         if ($filename -eq "Login Data") {
 
-          # Generate a temporary file path
-          $tempFilePath = [System.IO.Path]::GetTempFileName()
+            # Generate a temporary file path
+            $tempFilePath = [System.IO.Path]::GetTempFileName()
 
-          # Copy the database file to the temporary file path
-          # because the SQLite file is usually locked by the Browser
+            # Copy the database file to the temporary file path
+            # because the SQLite file is usually locked by the Browser
 
-          Copy-Item -Path $filePath -Destination $tempFilePath
+            Copy-Item -Path $filePath -Destination $tempFilePath
 
-          # SQL query to execute
-          $sqlQuery = "SELECT COUNT(*) FROM logins WHERE blacklisted_by_user != 1;"
+            # SQL query to execute
+            $sqlQuery = "SELECT COUNT(*) FROM logins WHERE blacklisted_by_user != 1;"
 
-          # Run sqlite3.exe with the copied database file and the query, and capture the output
-          $countLogins = & $sqlitePath $tempFilePath $sqlQuery
+            # Run sqlite3.exe with the copied database file and the query, and capture the output
+            $countLogins = & $sqlitePath $tempFilePath $sqlQuery
 
-          # Output the results
-          if ($countLogins -gt 0) {
-            $found_some_passwords = $true
-            $message = $message + "${countLogins} password(s) detected : ${filePath}"
-	  }
+            # Output the results
+            if ($countLogins -gt 0) {
+                $found_some_passwords = $true
+                $message = $message + "${countLogins} password(s) detected : ${filePath}"
+	        }
 
-          # Remove the temporary file
-          Remove-Item -Path $tempFilePath
+            # Remove the temporary file
+            Remove-Item -Path $tempFilePath
         }
     }
 }
 
 if (-not ($found_sqlite_binary)) {
-  Write-Output "Not Compliant - ${sqlitePath} not found"
-  Exit 1
+    Write-Output "Not Compliant - ${sqlitePath} not found"
+    Exit 1
 }
 
 if ($found_some_passwords) {
 
-  $output  = $message -join " | "
-  Write-Output $output
-  Exit 1
+    $output  = $message -join " | "
+    Write-Output $output
+    Exit 1
 
 } else {
 
-  Write-Output "Compliant"
-  Exit 0
+    Write-Output "Compliant"
+    Exit 0
 
 }
