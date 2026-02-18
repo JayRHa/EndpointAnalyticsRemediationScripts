@@ -14,8 +14,8 @@ Context: 64 Bit
 #> 
 
 ##Check how long machine has been on for
-$now = Get-Date -UFormat "%s" -Date (Get-Date)
-$poweron = (Get-Date -UFormat "%s" -Date (Get-Process -Id $pid).StartTime)
+$now = (Get-Date -UFormat "%s" -Date (Get-Date)) -replace (",",".")
+$poweron = (Get-Date -UFormat "%s" -Date (Get-Process -Id $pid).StartTime) -replace (",",".")
 
 ##Check the difference between the two
 $diff = $now - $poweron
