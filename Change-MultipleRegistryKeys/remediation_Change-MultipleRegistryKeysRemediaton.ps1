@@ -22,20 +22,31 @@ Context: 64 Bit
 #   e.g: Something went wrong :-( | Registry values created: YourFirstKeyName, YourSecondKeyName
 
 #region Define registry keys to create here
+# Action: "Update" to create/update the key, "Delete" to remove the key
 $RegistrySettingsToValidate = @(
     [pscustomobject]@{
-        Hive  = 'HKLM:\'
-        Key   = 'SOFTWARE\Contoso\Product'
-        Name  = 'ImportantKey'
-        Type  = 'REG_DWORD'
-        Value = 1
+        Hive   = 'HKLM:\'
+        Key    = 'SOFTWARE\Contoso\Product'
+        Name   = 'ImportantKey'
+        Type   = 'REG_DWORD'
+        Value  = 1
+        Action = 'Update'
     },
     [pscustomobject]@{
-        Hive  = 'HKLM:\'
-        Key   = 'SOFTWARE\Contoso\Product'
-        Name  = 'AnotherKey'
-        Type  = 'REG_SZ'
-        Value = "SomeValue"
+        Hive   = 'HKLM:\'
+        Key    = 'SOFTWARE\Contoso\Product'
+        Name   = 'AnotherKey'
+        Type   = 'REG_SZ'
+        Value  = "SomeValue"
+        Action = 'Update'
+    },
+    [pscustomobject]@{
+        Hive   = 'HKLM:\'
+        Key    = 'SOFTWARE\Contoso\Product'
+        Name   = 'OldKey'
+        Type   = 'REG_DWORD'
+        Value  = 0
+        Action = 'Delete'
     }
 )
 #endregion
@@ -51,9 +62,10 @@ $RegTypeMap = @{
 }
 #endregion
 
-#region Create registry keys
+#region Create/Delete registry keys
 $Output = "Something went wrong :-("
-$Names = @()
+$CreatedNames = @()
+$DeletedNames = @()
 $ExitCode = 1
 Foreach ($reg in $RegistrySettingsToValidate) {
 
@@ -61,23 +73,35 @@ Foreach ($reg in $RegistrySettingsToValidate) {
     $DesiredName          = $reg.Name
     $DesiredType          = $RegTypeMap[$reg.Type]
     $DesiredValue         = $reg.Value
+    $Action               = if ($reg.PSObject.Properties['Action']) { $reg.Action } else { 'Update' }
 
-    #Write-Host "Creating registry value: $DesiredPath | $DesiredName | $($reg.Type) | $DesiredValue" 
-    
-    If (-not (Test-Path -Path $DesiredPath)) {
-        New-Item -Path $DesiredPath -Force | Out-Null
+    if ($Action -eq 'Delete') {
+        if ((Test-Path -Path $DesiredPath) -and (Get-ItemProperty -Path $DesiredPath -Name $DesiredName -ErrorAction SilentlyContinue)) {
+            Remove-ItemProperty -Path $DesiredPath -Name $DesiredName -Force -ErrorAction SilentlyContinue
+            $DeletedNames += $DesiredName
+        } else {
+            $DeletedNames += $DesiredName
+        }
+    } else {
+        If (-not (Test-Path -Path $DesiredPath)) {
+            New-Item -Path $DesiredPath -Force | Out-Null
+        }
+        New-ItemProperty -Path $DesiredPath -Name $DesiredName -PropertyType $DesiredType -Value $DesiredValue -Force -ErrorAction SilentlyContinue | Out-Null
+        $CreatedNames += $DesiredName
     }
-    New-ItemProperty -Path $DesiredPath -Name $DesiredName -PropertyType $DesiredType -Value $DesiredValue -Force -ErrorAction SilentlyContinue | Out-Null
-    $Names += $DesiredName
 }
 #endregion
 
 #region Check if registry keys are set correctly
-If ($Names.count -eq $RegistrySettingsToValidate.count) {
-    $Output = "All OK | Registry values created: $($Names -join ', ')"
+$TotalProcessed = $CreatedNames.count + $DeletedNames.count
+If ($TotalProcessed -eq $RegistrySettingsToValidate.count) {
+    $OutputParts = @()
+    if ($CreatedNames.count -gt 0) { $OutputParts += "Created: $($CreatedNames -join ', ')" }
+    if ($DeletedNames.count -gt 0) { $OutputParts += "Deleted: $($DeletedNames -join ', ')" }
+    $Output = "All OK | $($OutputParts -join ' | ')"
     $ExitCode = 0
 } else {
-    $Output = "Something went wrong :-( | Registry values created: $($Names -join ', ')"
+    $Output = "Something went wrong :-( | Created: $($CreatedNames -join ', ') | Deleted: $($DeletedNames -join ', ')"
     $ExitCode = 1
 }
 #endregion
