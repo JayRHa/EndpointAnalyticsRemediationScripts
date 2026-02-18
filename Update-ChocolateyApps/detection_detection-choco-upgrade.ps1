@@ -26,6 +26,7 @@ try{
 	$choco2upgrade_selected = @()
 	foreach($id in $choco2upgrade_all){
 		$pos = $id.IndexOf("|")
+		if($pos -le 0){ continue }
 		$idonly = $id.Substring(0, $pos)
 		if($idonly -notin $upgrade_excludes){
 			$choco2upgrade_selected += $idonly
