@@ -9,8 +9,9 @@ Script: remediate-fastboot.ps1
 Description: Provides a notification to the user to reboot their machine
 Hint: This is a community script. There is no guarantee for this. Please check thoroughly before running.
 Version 1.0: Init
-Run as: System
-Context: 64 Bit
+Run this script using the logged-on credentials: Yes
+Enforce script signature check: No
+Run script in 64-bit PowerShell: Yes
 #> 
 
 function Show-Notification {
@@ -23,7 +24,16 @@ function Show-Notification {
         $ToastText
     )
 
-    [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] > $null
+    # Load required WinRT assemblies
+    $null = [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
+    $null = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]
+
+    # Ensure WinRT is available
+    if (-not ("Windows.UI.Notifications.ToastNotificationManager" -as [type])) {
+        # Fallback: Load via Add-Type for older PowerShell versions
+        [void][Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
+    }
+
     $Template = [Windows.UI.Notifications.ToastNotificationManager]::GetTemplateContent([Windows.UI.Notifications.ToastTemplateType]::ToastText02)
 
     $RawXml = [xml] $Template.GetXml()
