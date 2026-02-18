@@ -13,6 +13,14 @@ Run as: System
 Context: 64 Bit
 #> 
 
-$Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\AppInstallerCLI.exe")
+$Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\winget.exe") |
+    Sort-Object { [version](($_.FullName -split '_')[1]) } -ErrorAction SilentlyContinue |
+    Select-Object -Last 1 -ExpandProperty FullName
 
-&$winget upgrade --all --force --silent
+if (-not $Winget) {
+    $Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\AppInstallerCLI.exe") |
+        Sort-Object LastWriteTime |
+        Select-Object -Last 1 -ExpandProperty FullName
+}
+
+&$Winget upgrade --all --force --silent

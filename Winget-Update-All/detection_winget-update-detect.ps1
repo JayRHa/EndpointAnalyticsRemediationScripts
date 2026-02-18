@@ -14,9 +14,17 @@ Context: 64 Bit
 #> 
 
 Try {
-    $Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\AppInstallerCLI.exe")
+    $Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\winget.exe") |
+        Sort-Object { [version](($_.FullName -split '_')[1]) } -ErrorAction SilentlyContinue |
+        Select-Object -Last 1 -ExpandProperty FullName
 
-    $updatecheck = &$winget upgrade
+    if (-not $Winget) {
+        $Winget = Get-ChildItem -Path (Join-Path -Path (Join-Path -Path $env:ProgramFiles -ChildPath "WindowsApps") -ChildPath "Microsoft.DesktopAppInstaller*_x64*\AppInstallerCLI.exe") |
+            Sort-Object LastWriteTime |
+            Select-Object -Last 1 -ExpandProperty FullName
+    }
+
+    $updatecheck = &$Winget upgrade
     If ($updatecheck.count -lt 3){
         Write-Output "Compliant"
         Exit 0
