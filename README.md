@@ -29,23 +29,23 @@ This repository provides a growing library of **production-ready** detection and
 
 ### Deploy a script package in Intune
 
-1. Open the [**Intune Portal**](https://endpoint.microsoft.com/) and navigate to **Reports** > **Endpoint Analytics**
+1. Open the [**Intune Portal**](https://intune.microsoft.com/) and navigate to **Devices** > **Scripts and remediations**
 
-2. Click **+ Create script package**
+2. Click **+ Create**
 
-   ![Create script package](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/1.webp)
+   ![Create script package](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/1.png)
 
-3. Enter a **Name** and click **Next**
+3. Enter a **Name**, **Description**, **Publisher**, and **Version**, then click **Next**
 
-   ![Enter name](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/2.webp)
+   ![Enter details](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/2.png)
 
 4. Upload the **Detection script** (and optionally the **Remediation script**), then click **Next**
 
-   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.webp)
+   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.png)
 
-5. Assign to a **group**, set a **schedule**, and click **Create**
+5. Configure **Scope tags** and **Assignments**, then click **Review + create**
 
-   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.webp)
+   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.png)
 
 ---
 
