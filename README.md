@@ -41,11 +41,11 @@ This repository provides a growing library of **production-ready** detection and
 
 4. Upload the **Detection script** (and optionally the **Remediation script**), then click **Next**
 
-   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.png)
+   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.webp)
 
 5. Configure **Scope tags** and **Assignments**, then click **Review + create**
 
-   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.png)
+   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.webp)
 
 ---
 
