@@ -49,9 +49,8 @@ Invoke-WebRequest -Uri $launchurl -OutFile $launchscript -UseBasicParsing
 }
 
 ##Run it
-$acommand = "C:\Windows\System32\Cscript.exe $DirectoryToCreate\run-invisible.vbs"
-
-Invoke-Expression $acommand
+# Use Start-Process with explicit arguments to avoid Invoke-Expression / string-based command execution
+Start-Process -FilePath "$env:WINDIR\System32\Cscript.exe" -ArgumentList "`"$DirectoryToCreate\run-invisible.vbs`"" -WindowStyle Hidden
 
 ##Create/Update txt for detection
 $todaysdate = Get-Date -Format "dd-MM-yyyy-HH"

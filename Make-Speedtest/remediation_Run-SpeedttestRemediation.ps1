@@ -38,7 +38,8 @@ Function Measure-NetworkSpeed($f_testFile, $f_fileSize){
 }
 
 Function Get-PublicIp{
-    return (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content
+    # Use HTTPS to prevent tampering of the returned public IP by an on-path attacker.
+    return (Invoke-WebRequest -Uri "https://ifconfig.me/ip" -UseBasicParsing).Content
 }
 
 Function Build-Signature ($customerId, $sharedKey, $date, $contentLength, $method, $contentType, $resource)

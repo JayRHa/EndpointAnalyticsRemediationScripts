@@ -56,7 +56,23 @@ function New-RandomPassword {
 			[string] $RegEx = '[\w\$\%\&\/\(\)\=\?\!\\,\.\-_\:;\]\+\*\~<>\|]'
 	)
 
-	[string] $password = -join ( [char[]](0..127) -match $RegEx | Get-Random -Count $length )
+	# Use a cryptographically secure RNG. Get-Random on Windows PowerShell 5.1 is backed
+	# by System.Random, which is predictable and unsuitable for generating credentials
+	# (especially for a LAPS-style local administrator account).
+	[char[]]$allowed = [char[]](0..127) -match $RegEx
+	$rng = [System.Security.Cryptography.RNGCryptoServiceProvider]::new()
+	try {
+		$bytes = New-Object byte[] ($Length * 4)
+		$rng.GetBytes($bytes)
+		$chars = for ($i = 0; $i -lt $Length; $i++) {
+			$val = [BitConverter]::ToUInt32($bytes, $i * 4)
+			$allowed[$val % $allowed.Length]
+		}
+		[string]$password = -join $chars
+	}
+	finally {
+		$rng.Dispose()
+	}
 	return $password
 }
 
