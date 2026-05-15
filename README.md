@@ -68,19 +68,19 @@ flowchart LR
 
 2. Click **+ Create**
 
-   ![Create script package](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/1.png)
+   ![Create script package](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/1.png)
 
 3. Enter a **Name**, **Description**, **Publisher**, and **Version**, then click **Next**
 
-   ![Enter details](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/2.png)
+   ![Enter details](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/2.png)
 
 4. Upload the **Detection script** (and optionally the **Remediation script**), then click **Next**
 
-   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/3.webp)
+   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/3.webp)
 
 5. Configure **Scope tags** and **Assignments**, then click **Review + create**
 
-   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/4.webp)
+   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/4.webp)
 
 ---
 
@@ -93,7 +93,7 @@ We love contributions from the Intune community! Here's how you can help:
 | **Got an idea?** | [Open an issue](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/issues/new) describing the script you'd like to see |
 | **Got a script?** | Use the template in [`0 - Template`](./0%20-%20Template) and submit a pull request |
 
-![Submit an idea](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/.images/submitIdea.png)
+![Submit an idea](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/submitIdea.png)
 
 ---
 
