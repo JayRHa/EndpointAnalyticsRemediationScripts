@@ -25,6 +25,35 @@ This repository provides a growing library of **production-ready** detection and
 
 ---
 
+<!-- project-context:start -->
+## Project Context
+
+Endpoint Analytics Remediation Scripts is a deployable script library for Intune administrators who want ready-to-use detection and remediation packages. The repository is organized around script folders, where each package can be reviewed, tested, and then deployed through Microsoft Intune proactive remediations.
+
+- Use it when endpoint issues should be detected automatically and remediated consistently.
+- Each script package is designed to separate detection from remediation so administrators can validate behavior before rollout.
+- The repository acts as both a community script catalog and a practical deployment reference.
+
+## How It Works
+
+Administrators pick a script package, review the detection and remediation logic, upload it to Intune, and assign it to the intended device scope. Endpoints run detection first; remediation runs only when the detection result indicates that action is needed.
+
+```mermaid
+flowchart LR
+    Library[Script package library] --> Review[Review detection and remediation]
+    Review --> Intune[Upload to Microsoft Intune]
+    Intune --> Assignment[Assign to device scope]
+    Assignment --> Detection[Run detection script]
+    Detection --> Decision{Issue detected?}
+    Decision -- No --> Report[Report compliant result]
+    Decision -- Yes --> Remediation[Run remediation script]
+    Remediation --> Verify[Verify endpoint state]
+    Verify --> Report
+```
+
+---
+<!-- project-context:end -->
+
 ## Quick Start
 
 ### Deploy a script package in Intune
