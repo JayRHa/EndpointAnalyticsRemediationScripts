@@ -1,3 +1,3 @@
 Needs settings catalog for Privacy -> Location
 
-![alt text](image.png)
+![alt text](../assets/AutomaticTimezone-image.png)
