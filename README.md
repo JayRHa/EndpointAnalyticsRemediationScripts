@@ -1,18 +1,3 @@
-<!-- repo-standard:start -->
-# Endpoint Analytics Remediation Scripts
-
-Ready-to-use Microsoft Intune Endpoint Analytics Proactive Remediation detection and remediation scripts.
-
-| Area | Stack | Visibility |
-| --- | --- | --- |
-| Endpoint Management | PowerShell, Microsoft Intune | Public |
-
-**Repository:** `JayRHa/endpoint-analytics-remediation-scripts`  
-**Topics:** `microsoft-intune`, `endpoint-analytics`, `proactive-remediations`, `powershell`, `windows`, `endpoint-management`
-<!-- repo-standard:end -->
-
----
-
 <div align="center">
 
 # Endpoint Analytics Remediation Scripts
