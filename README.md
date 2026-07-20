@@ -1,35 +1,30 @@
+<!-- jr-brand:start -->
 <div align="center">
-
-# Endpoint Analytics Remediation Scripts
+  <a href="https://jannikreinhard.com/">
+    <img src="https://raw.githubusercontent.com/JayRHa/.github/main/assets/readme/collection.svg" alt="Jannik Reinhard — AI, Cloud and Endpoint Management" width="100%">
+  </a>
+  <h1>Endpoint Analytics Remediation Scripts</h1>
+  <p><strong>Ready-to-use Microsoft Intune Endpoint Analytics Proactive Remediation detection and remediation scripts.</strong></p>
+  <p>
+  <a href="https://jannikreinhard.com/"><img src="https://img.shields.io/badge/Website-0A5FC0?style=flat-square&amp;logo=wordpress&amp;logoColor=white" alt="Website"></a>
+  <a href="https://github.com/JayRHa"><img src="https://img.shields.io/badge/GitHub-081427?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/jannik-r/"><img src="https://img.shields.io/badge/LinkedIn-0795FF?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a>
+  <a href="https://x.com/jannik_reinhard"><img src="https://img.shields.io/badge/X-081427?style=flat-square&amp;logo=x&amp;logoColor=white" alt="X"></a>
+  <a href="https://www.youtube.com/@ModernDevMgmt/featured"><img src="https://img.shields.io/badge/YouTube-0A5FC0?style=flat-square&amp;logo=youtube&amp;logoColor=white" alt="YouTube"></a>
+</p>
+  <p><sub>Open-Source Collection · PowerShell · Practical by design</sub></p>
+</div>
+<!-- jr-brand:end -->
 
 **The largest community-driven collection of Intune Endpoint Analytics remediation scripts.**
 
 Detect. Remediate. Automate.
 
-[![GitHub stars](https://img.shields.io/github/stars/JayRHa/EndpointAnalyticsRemediationScripts?style=for-the-badge&logo=github&color=f4c542)](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/JayRHa/EndpointAnalyticsRemediationScripts?style=for-the-badge&logo=github&color=4078c0)](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/JayRHa/EndpointAnalyticsRemediationScripts?style=for-the-badge&logo=github&color=d73a4a)](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/issues)
-[![Contributors](https://img.shields.io/github/contributors/JayRHa/EndpointAnalyticsRemediationScripts?style=for-the-badge&logo=github&color=28a745)](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/graphs/contributors)
-
-<p>
-  <a href="https://jannikreinhard.com/">Blog</a> ·
-  <a href="https://www.linkedin.com/in/jannik-r/">LinkedIn</a> ·
-  <a href="https://x.com/jannik_reinhard">X</a>
-</p>
-
----
-
-`90+ Scripts` | `PowerShell` | `Ready to Deploy` | `Community Maintained`
-
-</div>
-
-## What is this?
+## Overview
 
 This repository provides a growing library of **production-ready** detection and remediation scripts for [Microsoft Intune Endpoint Analytics](https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations). Each script package includes a detection script and (where applicable) a remediation script that you can deploy directly to your environment.
 
 > **Browse the folders above** to explore all available scripts -- from security hardening and Defender configuration to disk cleanup, Teams management, and more.
-
----
 
 <!-- project-context:start -->
 ## Project Context
@@ -57,10 +52,9 @@ flowchart LR
     Verify --> Report
 ```
 
----
 <!-- project-context:end -->
 
-## Quick Start
+## Quickstart
 
 ### Deploy a script package in Intune
 
@@ -82,8 +76,6 @@ flowchart LR
 
    ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/4.webp)
 
----
-
 ## Contributing
 
 We love contributions from the Intune community! Here's how you can help:
@@ -95,8 +87,6 @@ We love contributions from the Intune community! Here's how you can help:
 
 ![Submit an idea](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/submitIdea.png)
 
----
-
 ## Contributors
 
 Thanks to everyone who has contributed to this project!
@@ -104,10 +94,6 @@ Thanks to everyone who has contributed to this project!
 <a href="https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=JayRHa/EndpointAnalyticsRemediationScripts" />
 </a>
-
----
-
-<div align="center">
 
 ### Disclaimer
 
@@ -118,4 +104,18 @@ Thanks to everyone who has contributed to this project!
 
 **If this repo helps you, consider giving it a :star:**
 
+## License
+
+This project is available under the terms in [LICENSE](LICENSE).
+
+<!-- jr-brand-footer:start -->
+
+---
+
+<div align="center">
+  <p><sub>Built and maintained by <a href="https://jannikreinhard.com/">Jannik Reinhard</a> · Microsoft MVP for Security and AI Platform.</sub></p>
+  <p><a href="https://www.buymeacoffee.com/jannikreinf">Support the open-source work</a></p>
+  <p><strong>Stay healthy, Cheers Jannik</strong></p>
 </div>
+
+<!-- jr-brand-footer:end -->
