@@ -1,32 +1,55 @@
 <!-- jr-brand:start -->
-<div align="center">
+<p align="center">
   <a href="https://jannikreinhard.com/">
-    <img src="https://raw.githubusercontent.com/JayRHa/.github/main/assets/readme/brand-header.png" alt="Jannik Reinhard — Driving AI with passion" width="100%">
+    <img src="https://raw.githubusercontent.com/JayRHa/.github/main/assets/readme/brand-header.png" alt="Jannik Reinhard — I help enterprises ship secure AI agents" width="100%">
   </a>
-  <h1>Endpoint Analytics Remediation Scripts</h1>
-  <p><strong>Ready-to-use Microsoft Intune Endpoint Analytics Proactive Remediation detection and remediation scripts.</strong></p>
-  <p>
-  <a href="https://jannikreinhard.com/"><img src="https://img.shields.io/badge/Website-146CDD?style=flat-square&amp;logo=wordpress&amp;logoColor=white" alt="Website"></a>
-  <a href="https://github.com/JayRHa"><img src="https://img.shields.io/badge/GitHub-081427?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a>
-  <a href="https://www.linkedin.com/in/jannik-r/"><img src="https://img.shields.io/badge/LinkedIn-0795FF?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a>
-  <a href="https://x.com/jannik_reinhard"><img src="https://img.shields.io/badge/X-081427?style=flat-square&amp;logo=x&amp;logoColor=white" alt="X"></a>
-  <a href="https://www.youtube.com/@jannikreinhard"><img src="https://img.shields.io/badge/YouTube-146CDD?style=flat-square&amp;logo=youtube&amp;logoColor=white" alt="YouTube"></a>
-  </p>
-  <p><sub>Driving AI with passion · Microsoft Foundry · Intune · Azure</sub></p>
-</div>
+</p>
+<p align="center">
+  <a href="https://jannikreinhard.com/">Website</a> ·
+  <a href="https://www.linkedin.com/in/jannik-r/">LinkedIn</a> ·
+  <a href="https://x.com/jannik_reinhard">X</a> ·
+  <a href="https://www.youtube.com/@jannikreinhard">YouTube</a>
+</p>
 <!-- jr-brand:end -->
 
-**The largest community-driven collection of Intune Endpoint Analytics remediation scripts.**
+# Intune remediation scripts
 
-Detect. Remediate. Automate.
+**Type:** Collection · **Status:** Community project
 
 ## Overview
 
-This repository provides a growing library of **production-ready** detection and remediation scripts for [Microsoft Intune Endpoint Analytics](https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations). Each script package includes a detection script and (where applicable) a remediation script that you can deploy directly to your environment.
+Detection and remediation scripts for Microsoft Intune endpoint management.
+
+
+
+Detect. Remediate. Automate.
+
+This repository provides a growing library of detection and remediation scripts for [Microsoft Intune Endpoint Analytics](https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations). Each script package includes a detection script and (where applicable) a remediation script that you can deploy directly to your environment.
 
 > **Browse the folders above** to explore all available scripts -- from security hardening and Defender configuration to disk cleanup, Teams management, and more.
 
-<!-- project-context:start -->
+## Quickstart
+
+### Deploy a script package in Intune
+
+1. Open the [**Intune Portal**](https://intune.microsoft.com/) and navigate to **Devices** > **Scripts and remediations**
+
+2. Click **+ Create**
+
+   ![Create script package](https://github.com/JayRHa/intune-remediation-scripts/blob/main/assets/1.png)
+
+3. Enter a **Name**, **Description**, **Publisher**, and **Version**, then click **Next**
+
+   ![Enter details](https://github.com/JayRHa/intune-remediation-scripts/blob/main/assets/2.png)
+
+4. Upload the **Detection script** (and optionally the **Remediation script**), then click **Next**
+
+   ![Upload scripts](https://github.com/JayRHa/intune-remediation-scripts/blob/main/assets/3.webp)
+
+5. Configure **Scope tags** and **Assignments**, then click **Review + create**
+
+   ![Assign and create](https://github.com/JayRHa/intune-remediation-scripts/blob/main/assets/4.webp)
+
 ## Project Context
 
 Endpoint Analytics Remediation Scripts is a deployable script library for Intune administrators who want ready-to-use detection and remediation packages. The repository is organized around script folders, where each package can be reviewed, tested, and then deployed through Microsoft Intune proactive remediations.
@@ -52,47 +75,23 @@ flowchart LR
     Verify --> Report
 ```
 
-<!-- project-context:end -->
-
-## Quickstart
-
-### Deploy a script package in Intune
-
-1. Open the [**Intune Portal**](https://intune.microsoft.com/) and navigate to **Devices** > **Scripts and remediations**
-
-2. Click **+ Create**
-
-   ![Create script package](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/1.png)
-
-3. Enter a **Name**, **Description**, **Publisher**, and **Version**, then click **Next**
-
-   ![Enter details](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/2.png)
-
-4. Upload the **Detection script** (and optionally the **Remediation script**), then click **Next**
-
-   ![Upload scripts](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/3.webp)
-
-5. Configure **Scope tags** and **Assignments**, then click **Review + create**
-
-   ![Assign and create](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/4.webp)
-
 ## Contributing
 
 We love contributions from the Intune community! Here's how you can help:
 
 | | How to contribute |
 |---|---|
-| **Got an idea?** | [Open an issue](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/issues/new) describing the script you'd like to see |
+| **Got an idea?** | [Open an issue](https://github.com/JayRHa/intune-remediation-scripts/issues/new) describing the script you'd like to see |
 | **Got a script?** | Use the template in [`0 - Template`](./0%20-%20Template) and submit a pull request |
 
-![Submit an idea](https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/blob/main/assets/submitIdea.png)
+![Submit an idea](https://github.com/JayRHa/intune-remediation-scripts/blob/main/assets/submitIdea.png)
 
 ## Contributors
 
 Thanks to everyone who has contributed to this project!
 
-<a href="https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=JayRHa/EndpointAnalyticsRemediationScripts" />
+<a href="https://github.com/JayRHa/intune-remediation-scripts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=JayRHa/intune-remediation-scripts" />
 </a>
 
 ### Disclaimer
@@ -109,13 +108,7 @@ Thanks to everyone who has contributed to this project!
 This project is available under the terms in [LICENSE](LICENSE).
 
 <!-- jr-brand-footer:start -->
-
 ---
 
-<div align="center">
-  <p><sub>Built and maintained by <a href="https://jannikreinhard.com/">Jannik Reinhard</a> · Microsoft MVP for Security and AI Platform.</sub></p>
-  <p><a href="https://www.buymeacoffee.com/jannikreinf">Support the open-source work</a></p>
-  <p><strong>Stay healthy, Cheers Jannik</strong></p>
-</div>
-
+[Articles and guides](https://jannikreinhard.com/) · [Repository index](https://github.com/JayRHa/.github/blob/main/REPOSITORIES.md)
 <!-- jr-brand-footer:end -->

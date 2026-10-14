@@ -6,7 +6,7 @@ Description  : Script detects if common Browsers have passwords stored locally
 Requirements : sqlite3.exe installed
 
                You can use
-               https://github.com/JayRHa/EndpointAnalyticsRemediationScripts/tree/main/Add-Winget-App
+               https://github.com/JayRHa/intune-remediation-scripts/tree/main/Add-Winget-App
                with winget appid "SQLite.SQLite" for example to install sqlite3.exe
 
 Run this script using the logged-on credentials: Yes
