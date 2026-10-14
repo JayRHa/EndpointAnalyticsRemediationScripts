@@ -112,3 +112,7 @@ This project is available under the terms in [LICENSE](LICENSE).
 
 [Articles and guides](https://jannikreinhard.com/) · [Repository index](https://github.com/JayRHa/.github/blob/main/REPOSITORIES.md)
 <!-- jr-brand-footer:end -->
+
+## Bulk import
+
+Use the [optional import tool](tools/README.md) to preview and import selected packages without assigning them to devices.
